@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1092.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="443.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="524.0" spacing="50.0">
+               <children>
+                  <Label text="Modify Product">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="450.0" prefWidth="479.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="216.0" spacing="25.0">
+                     <children>
+                        <Label focusTraversable="false" text="ID">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label focusTraversable="false" text="Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label focusTraversable="false" text="Inventory">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label focusTraversable="false" text="Price/Cost">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label focusTraversable="false" text="Max">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Min">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="75.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="216.0" spacing="18.0">
+                     <children>
+                        <TextField fx:id="productIDText" disable="true" />
+                        <TextField fx:id="productNameText" />
+                        <TextField fx:id="InventoryText" />
+                        <TextField fx:id="PriceText" />
+                        <TextField fx:id="MaxText" />
+                        <TextField fx:id="MinText" maxWidth="216.0" prefWidth="216.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="542.0" layoutY="44.0" prefHeight="538.0" prefWidth="540.0" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="partSearchBox" alignment="CENTER" maxWidth="175.0" onKeyTyped="#searchForPart" prefHeight="26.0" prefWidth="162.0" promptText="Search by Part ID or Name" />
+               </children>
+            </HBox>
+            <TableView fx:id="partTableView" maxWidth="540.0" prefHeight="201.0" prefWidth="540.0">
+               <columns>
+                  <TableColumn fx:id="IDColumn" editable="false" prefWidth="135.0" text="Part ID" />
+                  <TableColumn fx:id="nameColumn" editable="false" prefWidth="135.0" text="Part Name" />
+                  <TableColumn fx:id="stockColumn" editable="false" prefWidth="135.0" text="Inventory Level" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#addAssociatedPartButtonPushed" text="Add" />
+               </children>
+            </HBox>
+            <TableView fx:id="associatedPartTableView" prefHeight="201.0" prefWidth="482.0">
+               <columns>
+                  <TableColumn fx:id="assocIDColumn" editable="false" prefWidth="135.0" text="Part ID" />
+                  <TableColumn fx:id="assocNameColumn" editable="false" prefWidth="135.0" text="Part Name" />
+                  <TableColumn fx:id="assocStockColumn" editable="false" prefWidth="135.0" text="Inventory Level" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="86.0" prefWidth="174.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#deleteAssociatedPartButtonPushed" text="Remove Associated Part" />
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#saveProductButtonPushed" text="Save" />
+                              <StackPane prefHeight="43.0" prefWidth="50.0" />
+                              <Button mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

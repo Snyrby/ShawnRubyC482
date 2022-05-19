@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="524.0" spacing="50.0">
+         <children>
+            <Label text="Modify Part">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouse" mnemonicParsing="false" onAction="#radioButtonPushed" selected="true" text="In-House" />
+            <RadioButton fx:id="outSourced" mnemonicParsing="false" onAction="#radioButtonPushed" text="Outsourced" />
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </HBox>
+      <HBox layoutY="121.0" prefHeight="450.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="216.0" spacing="25.0">
+               <children>
+                  <Label focusTraversable="false" text="ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label focusTraversable="false" text="Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label focusTraversable="false" text="Inventory">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label focusTraversable="false" text="Price/Cost">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label focusTraversable="false" text="Max">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ChangeBox" focusTraversable="false" text="Machine ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="75.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="216.0" spacing="18.0">
+               <children>
+                  <TextField fx:id="partIDText" disable="true" />
+                  <TextField fx:id="partNameText" />
+                  <TextField fx:id="InventoryText" />
+                  <TextField fx:id="PriceText" />
+                  <TextField fx:id="MaxText" />
+                  <TextField fx:id="ChangeText" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#savePartButtonPushed" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+                     </children>
+                     <padding>
+                        <Insets left="52.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="450.0" prefWidth="366.0">
+               <children>
+                  <StackPane prefHeight="178.0" prefWidth="216.0" />
+                  <HBox prefHeight="100.0" prefWidth="300.0" spacing="30.0">
+                     <children>
+                        <Label text="Min">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="3.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="MinText" maxWidth="216.0" prefWidth="216.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
